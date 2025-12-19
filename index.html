@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogger Pro | AI-Powered Content Management</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="A professional-grade blog management platform featuring Gemini-powered content creation, image generation, and a sleek modern dashboard." />
+    <meta name="theme-color" content="#ea580c" />
+    
+    <!-- External Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "@google/genai": "https://esm.sh/@google/genai@1.34.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+
+    <style>
+      body { 
+        font-family: 'Inter', sans-serif; 
+        margin: 0;
+        padding: 0;
+        background-color: #f9fafb;
+      }
+      
+      /* Loader logic: Only visible when #root is empty */
+      #root:empty ~ #app-loader {
+        display: flex;
+      }
+
+      #app-loader {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: white;
+        z-index: 9999;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .loading-bar {
+        width: 160px;
+        height: 3px;
+        background: #fed7aa;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-top: 24px;
+      }
+
+      .loading-progress {
+        width: 100%;
+        height: 100%;
+        background: #ea580c;
+        animation: progress-slide 1.5s infinite ease-in-out;
+        transform-origin: 0% 50%;
+      }
+
+      @keyframes progress-slide {
+        0% { transform: translateX(-100%) scaleX(0.2); }
+        50% { transform: translateX(0%) scaleX(1); }
+        100% { transform: translateX(100%) scaleX(0.2); }
+      }
+
+      .prose img { border-radius: 0.75rem; }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <!-- Main App Root -->
+    <div id="root"></div>
+
+    <!-- Initial Loading State -->
+    <div id="app-loader">
+      <div class="flex items-center gap-4">
+        <div class="bg-orange-600 w-12 h-12 flex items-center justify-center rounded-xl shadow-xl shadow-orange-200">
+          <i class="fa-solid fa-b text-white text-2xl"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-2xl font-bold tracking-tight text-gray-900">Blogger Pro</span>
+          <span class="text-[10px] uppercase tracking-widest text-orange-600 font-bold">By Google Gemini</span>
+        </div>
+      </div>
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+      <p class="mt-6 text-gray-400 text-xs font-medium tracking-wide uppercase animate-pulse">Synchronizing with Gemini API...</p>
+    </div>
+  </body>
+</html>

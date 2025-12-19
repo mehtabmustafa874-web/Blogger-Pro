@@ -1,0 +1,8 @@
+{
+  "name": "Copy of Gemini Blogger Pro",
+  "description": "A professional-grade blog management platform featuring AI-powered content creation, image generation, and a sleek modern dashboard inspired by top-tier CMS platforms.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
